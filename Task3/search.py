@@ -1,4 +1,3 @@
-import json
 import re
 from pymorphy3 import MorphAnalyzer
 from pyparsing import Word, Suppress, Group, Forward, srange, CaselessLiteral, ZeroOrMore
@@ -59,6 +58,7 @@ def get_index_from_file(index_file_name):
 def main():
     index = get_index_from_file(new_index_file)
 
+    # Вводим запрос и получаем страницы, удовлетворяющие условию
     while True:
         query = input("Введите запрос: ")
         results = search(index, query)
