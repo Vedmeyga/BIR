@@ -26,9 +26,6 @@ def get_inverted_index_tokens(html_dir):
         with open(os.path.join(html_dir, filename), 'r', encoding='utf-8') as file:
             text = file.read()
             tokens = tokenize(text, True)
-
-            print(filename)
-
             for token in tokens:
                 if token in index:
                     index[token].add(i)
